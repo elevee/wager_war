@@ -1,6 +1,7 @@
 class WagersController < ApplicationController
 
   def index
+    
   end
 
   def create
@@ -14,5 +15,5 @@ class WagersController < ApplicationController
 
   def destroy
   end
-  
+
 end

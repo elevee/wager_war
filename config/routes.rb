@@ -1,8 +1,11 @@
 WagerWar::Application.routes.draw do
+  devise_for :users
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
   root :to => 'wagers#index'
+  # match '/users/sign_out' => 'wagers#index'
 
   resources :wagers
 

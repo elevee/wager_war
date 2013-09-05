@@ -30,11 +30,13 @@
       <% end %>
     </div>
 
+    <% if notice || alert %>
     <div dats-alert class="alert-box">
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
       <a href="#" class="close">&times;</a>
     </div>
+    <% end %>
 
 
   <!-- Your content goes here -->

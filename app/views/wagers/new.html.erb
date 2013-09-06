@@ -1,70 +1,75 @@
 <h2>Create a Wager</h2>
 
-<form>
+<%= form_for @wager, url: {action: "create"}, html: {class: ""} do |f| %>
   <fieldset>
-    <legend>Create a wager</legend>
+  <legend>Create a wager</legend>
 
-    <div class="row">
+  	<div class="row">
       <div class="large-12 columns">
-        <label>Title</label>
-        <input type="text" placeholder="The Bet To End All Bets">
-      </div>
-    </div>
-	  <!-- _____________________________________________________ -->
-    <div class="row">
-      <div class="large-4 columns">
-        <label>With</label>
-        <input type="text" placeholder="Choose A Friend">
-      </div>
+      	<label>Title</label>
+  			<%= f.text_field :title, placeholder: "The Bet To End All Bets" %>
+  		</div>
+  	</div>
 
-      <div class="large-4 columns">
-        <label>Input Label</label>
-        <input type="text" placeholder="large-4.columns">
-      </div>
-    </div>
-      <!-- _____________________________________________________ -->
+  	<div class="row">
+  		<div class="large-4 columns">
+  			<label>With</label>
+  				<%= f.text_field :guest, placeholder: "Choose a Friend" %>
+  		</div>
+  		<div class="large-8 columns">
+  		</div>
+  	</div>
 
-	<div class="row">
-      <div class="large-12 columns">
+  	<div class="row">
+			<div class="large-12 columns">
         <label>Description</label>
-        <textarea placeholder="What's all this about?"></textarea>
+        <%= f.text_area :description, size: "60x12", placeholder: "What's all this about?" %>
       </div>
-    </div>
+  	</div>
 
-	  <!-- _____________________________________________________ -->    
-
-    <div class="row">  
+  	<div class="row">  
       <div class="large-12 columns">
         <div class="row collapse">
           <h4>Terms</h4>
-		</div>
+				</div>
+	  	</div>
 	  </div>
-	  <div class="large-6 columns">
+
+		<%= fields_for @terms do |fa| %>
+   
+
+	  <div class="row">	
+	  	<div class="large-6 columns host_terms">
         <div class="row collapse">
-          <label>For You To Win (max: 4)</label>
           <div class="large-11 columns">
-            <input type="text" placeholder="You have to do it naked">
+      	  	<%= fa.label "For You To Win (max: 4)" %>
+      			<%= fa.text_field :criterion, placeholder: "You have to do it naked" %>
           </div>
           <div class="large-1 columns">
-          	<a href="#" class="button small">+</a>
+          	<a href="#" class="button small host_add_button">+</a>
           </div>
-        </div>
+				</div>
+			</div>
+
+      <div class="large-5 columns">
+        <div class="row collapse">
+          <div class="large-11 columns">
+            <%= fa.label "For Them To Win (max: 4)" %>
+      			<%= fa.text_field :criterion, placeholder: "You have to do it naked" %>
+          </div>
+          <div class="large-1 columns">
+          	<a href="#" class="button small guest_add_button">+</a>
+      		</div>
+      	</div>
       </div>
-        <div class="large-5 columns">
-          <div class="row collapse">
-          <label>For Them To Win (max: 4)</label>
-          <div class="large-11 columns">
-            <input type="text" placeholder="You have to do it naked">
-          </div>
-          <div class="large-1 columns">
-          	<a href="#" class="button small">+</a>
-          </div>
-        </div>
-
-      <!-- _____________________________________________________ -->
     </div>
-
-    
-
-  </fieldset>
-</form>
+	<% end %>
+	<div class="row">
+  	<div class="large-8 columns">
+  	</div>
+  	<div class="large-4 columns">
+  		<%= f.submit "Create Stub", class: "button" %>
+  	</div>
+	</div>
+	</fieldset>
+<% end %>

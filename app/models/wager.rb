@@ -3,6 +3,7 @@ class Wager < ActiveRecord::Base
   belongs_to :host,  class_name: "User", foreign_key: "host_id"
   belongs_to :guest,  class_name: "User", foreign_key: "guest_id"  
   has_many :terms
+  # accepts_nested_attributes_for :terms
 
   # attr_accessible :title, :body
 end

@@ -4,8 +4,11 @@
 $(document).ready(function(){
 	
 	//When host adds terms
-	$('.host_add_button').click(function(){
-		$('.host_terms input').last().append('\
+	var addTermBox = $('.host_add_button').on('click', function(){
+		//hide the '+' button
+		$('.host_add_button').hide();
+		//insert next term field with new '+' button
+		$('.host_terms input').last().after('\
 			<div class="large-11 columns">\
           		<input type="text" placeholder="You have to do it naked">\
           	</div>\
@@ -13,6 +16,7 @@ $(document).ready(function(){
           		<a href="#" class="button small host_add_button">+</a>\
           	</div>\
         ');
+        // addTermBox();
 	});
 
 	//When guest adds terms

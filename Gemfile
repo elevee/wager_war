@@ -7,6 +7,8 @@ gem 'rails', '3.2.13'
 
 gem 'sqlite3'
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
 
 group :development do
 

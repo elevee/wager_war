@@ -5,5 +5,5 @@ class Wager < ActiveRecord::Base
   has_many :terms
   # accepts_nested_attributes_for :terms
 
-  # attr_accessible :title, :body
+  attr_accessible :title, :description
 end

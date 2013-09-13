@@ -18,6 +18,7 @@ end
 
 group :production do
   gem 'pg'
+  gem 'zurb-foundation', '~> 4.0.0'
 end
 
 

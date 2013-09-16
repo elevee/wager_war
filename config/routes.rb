@@ -6,7 +6,6 @@ WagerWar::Application.routes.draw do
 
   root :to => 'wagers#index'
   # match '/users/sign_out' => 'wagers#index'
-  match '/new' => 'wagers#new'
 
   resources :wagers
 

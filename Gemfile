@@ -5,16 +5,22 @@ gem 'rails', '3.2.13'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 
 group :development do
 
+  gem 'sqlite3'
   gem "better_errors"
   gem "binding_of_caller"
 
+end
+
+group :production do
+  gem 'pg'
+  gem 'zurb-foundation', '~> 4.0.0'
 end
 
 

@@ -9,6 +9,7 @@ gem 'rails', '3.2.13'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'figaro'
 
 group :development do
 

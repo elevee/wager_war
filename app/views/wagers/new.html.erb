@@ -34,36 +34,9 @@
 				</div>
 	  	</div>
 	  </div>
+    
+		
 
-		<%= fields_for @terms do |fa| %>
-   
-
-	  <div class="row">	
-	  	<div class="large-6 columns host_terms">
-        <div class="row collapse">
-          <div class="large-11 columns">
-      	  	<%= fa.label "For You To Win (max: 4)" %>
-      			<%= fa.text_field :criterion, placeholder: "You have to do it naked" %>
-          </div>
-          <div class="large-1 columns">
-          	<a href="#" class="button small host_add_button">+</a>
-          </div>
-				</div>
-			</div>
-
-      <div class="large-5 columns">
-        <div class="row collapse">
-          <div class="large-11 columns">
-            <%= fa.label "For Them To Win (max: 4)" %>
-      			<%= fa.text_field :criterion, placeholder: "You have to do it naked" %>
-          </div>
-          <div class="large-1 columns">
-          	<a href="#" class="button small guest_add_button">+</a>
-      		</div>
-      	</div>
-      </div>
-    </div>
-	<% end %>
 	<div class="row">
   	<div class="large-8 columns">
   	</div>

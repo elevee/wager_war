@@ -1,14 +1,33 @@
 class WagersController < ApplicationController
 
+before_filter :authenticate_user!
+
   def index
     
   end
 
   def create
-    @wager = Wager.create(params[:wager])
-      @wager.host_id = current_user
+    # Assign current user and guest user to wager and create it so it has an ID
+    @wager = Wager.new(params[:wager])
+      @wager.host_id = current_user.id
+      # still need to assign guest user id
+    if @wager.save  
+      # Create terms
+      @term = []
+      @term.push(Term.create(params[:term]))
+      binding.pry
+      # Add terms to existing wager
+      @wager.terms.each do |term|
+        # @wager.host_terms.push(term.id)
+      end
+      redirect_to :action => 'show'
+    else
+      render :action => 'new'
+    end
 
-
+    # params[:term].each
+    # @term = @wager.terms.build(params[:term])
+    # @term.save
 
       if @wager.valid? 
         respond_to do |format|

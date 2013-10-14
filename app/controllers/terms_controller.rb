@@ -5,11 +5,11 @@ class TermsController < ApplicationController
   end
 
   def create
-    Term.create(params[:wager][:term])
+    
   end
 
   def new
-    @terms = Term.new
+    @term = Term.new
   end
 
   def update

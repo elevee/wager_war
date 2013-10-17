@@ -28,17 +28,33 @@
   	</div>
 
   	<div class="row">  
-      <div class="large-12 columns">
+      <div class="large-5 columns">
         <div class="row collapse">
-          <h4>Terms</h4>
+          <h4>Your Terms</h4>
 				</div>
-	  	</div>
-	  </div>
+      
+        <%= f.fields_for :terms do |term_form| %>
+          <%= term_form.label :criterion, 'Term:' %>
+          <%= term_form.text_field :criterion %>
+        <% end %>
+      </div>
+
+      <div class="large-5 columns">
+        <div class="row collapse">
+          <h4>Their Terms</h4>
+        </div>
+          
+        <%= f.fields_for :terms do |term_form| %>
+          <%= term_form.label :criterion, 'Term:' %>
+          <%= term_form.text_field :criterion %>
+        <% end %>  
+      </div>
+	  
+    </div>
     
-		<%= fields_for :terms do |fa| %>
-      <%=fa.label :criterion %>
-      <%=fa.text_field :criterion %>
-    <% end %>
+
+  
+
 
 	<div class="row">
   	<div class="large-8 columns">

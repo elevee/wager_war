@@ -35,7 +35,7 @@
 	  	</div>
 	  </div>
     
-		<%= fields_for "terms[]", terms do |fa| %>
+		<%= fields_for :terms do |fa| %>
       <%=fa.label :criterion %>
       <%=fa.text_field :criterion %>
     <% end %>

@@ -34,8 +34,8 @@
 				</div>
       
         <%= f.fields_for :terms do |term_form| %>
-          <%= term_form.label :criterion, 'Term:' %>
-          <%= term_form.text_field :criterion %>
+          <%= term_form.label :host_criterion, 'Term:' %>
+          <%= term_form.text_field :host_criterion %>
         <% end %>
       </div>
 
@@ -45,16 +45,13 @@
         </div>
           
         <%= f.fields_for :terms do |term_form| %>
-          <%= term_form.label :criterion, 'Term:' %>
-          <%= term_form.text_field :criterion %>
+          <%= term_form.label :guest_criterion, 'Term:' %>
+          <%= term_form.text_field :guest_criterion %>
         <% end %>  
       </div>
 	  
     </div>
-    
-
   
-
 
 	<div class="row">
   	<div class="large-8 columns">

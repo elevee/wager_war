@@ -38,7 +38,27 @@ class WagersController < ApplicationController
     if @wager.valid? 
       respond_to do |format|
         if @wager.save
+
+          terms_array = params["wager"]["terms_attributes"].values
+          host_terms = []
+          guest_terms = []
+
+          terms_array.each do |term|
+            x = term["host_criterion"]
+            if x
+              host_terms.push(x)
+            end
+          end
+          
+          terms_array.each do |term|
+            y = term["guest_criterion"]
+            if y
+              guest_terms.push(y)
+            end
+          end
+
           binding.pry
+
           format.html { redirect_to(@wager, :notice => 'Wager Stub successfully created.') }
           format.xml  { render :xml => @wager, :status => :created, :location => @wager }
         else

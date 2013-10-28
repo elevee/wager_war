@@ -11,9 +11,17 @@
     <p><%= @wager.description %></p>
 
     <p>Terms:</p>
-    <p>
-    	<%= @wager.terms. %>
-    </p>
-  	
+    <ul>
+    	<% @host_terms.each do |term| %>
+    		<li><%= term.host_criterion %></li>
+		<% end %>
+  	</ul>
+
+  	 <ul>
+    	<% @guest_terms.each do |term| %>
+    		<li><%= term.guest_criterion %></li>
+		<% end %>
+  	</ul>
+
   </div>
 </div>

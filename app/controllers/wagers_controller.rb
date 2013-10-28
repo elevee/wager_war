@@ -42,7 +42,17 @@ class WagersController < ApplicationController
 
   def show
     @wager = Wager.find(params[:id])
-    @host_terms = @wager.terms.where
+    @host_terms = @wager.terms.select do |term|
+      unless term.host_criterion.nil?
+        term
+      end
+    end
+
+    @guest_terms = @wager.terms.select do |term|
+      unless term.guest_criterion.nil?
+        term
+      end
+    end
   end
 
   def update

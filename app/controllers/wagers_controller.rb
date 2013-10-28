@@ -18,7 +18,10 @@ class WagersController < ApplicationController
     if @wager.valid? 
       respond_to do |format|
         if @wager.save
-
+          last_term = @wager.terms.last
+          if last_term.host_criterion == nil && last_term.guest_criterion == nil
+            last_term.destroy
+          end
           binding.pry
 
           format.html { redirect_to(@wager, :notice => 'Wager Stub successfully created.') }

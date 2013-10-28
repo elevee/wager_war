@@ -2,26 +2,37 @@
 
 <h6>Your friend has been notified. The wager isn't officially on until your friend accepts. Share this ish with your buds!</h6>
 
-<div class="row">
-  <div class="large-4 columns">
-    <h6><strong>Title:</strong></h6>
-    <p><%= @wager.title %></p>
-
-    <h6><strong>Description:</strong></h6>
-    <p><%= @wager.description %></p>
-
-    <p>Terms:</p>
-    <ul>
-    	<% @host_terms.each do |term| %>
-    		<li><%= term.host_criterion %></li>
-		<% end %>
-  	</ul>
-
-  	 <ul>
-    	<% @guest_terms.each do |term| %>
-    		<li><%= term.guest_criterion %></li>
-		<% end %>
-  	</ul>
-
-  </div>
-</div>
+	
+	
+	<div class="stub large-12 columns">
+		<div class="header row">
+			<h2>Wager War</h2>
+			<h6><%= @wager.title %></h6>
+		</div>
+		<div class="barcode row">
+			<p>Yippeee put a barcode here.</p>
+		</div>
+		<div class="description row">
+    		<h6><strong>Description:</strong></h6>
+    		<p><%= @wager.description %></p>
+		</div>
+		<div class="terms row">
+			<div class="large-6 columns">
+				<h6><strong>For you to win:</strong></h6>
+				<ul>
+			    	<% @host_terms.each do |term| %>
+			    		<li><%= term.host_criterion %></li>
+					<% end %>
+  				</ul>
+			</div>
+			<div class="large-6 columns">
+				<h6><strong>For them to win:</strong></h6>
+				<ul>
+			    	<% @guest_terms.each do |term| %>
+			    		<li><%= term.guest_criterion %></li>
+					<% end %>
+  				</ul>
+			</div>
+		</div>
+		
+	</div>

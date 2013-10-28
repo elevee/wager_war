@@ -39,6 +39,7 @@ class WagersController < ApplicationController
 
   def show
     @wager = Wager.find(params[:id])
+    @host_terms = @wager.terms.where
   end
 
   def update

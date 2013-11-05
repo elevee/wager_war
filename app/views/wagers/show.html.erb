@@ -18,7 +18,7 @@
 		<div class="terms row">
 			<div class="large-6 columns">
 				<h6><strong>For you to win:</strong></h6>
-				<ul>
+				<ul class="host">
 			    	<% @host_terms.each do |term| %>
 			    		<li><%= term.host_criterion %></li>
 					<% end %>
@@ -26,7 +26,7 @@
 			</div>
 			<div class="large-6 columns">
 				<h6><strong>For them to win:</strong></h6>
-				<ul>
+				<ul class="guest">
 			    	<% @guest_terms.each do |term| %>
 			    		<li><%= term.guest_criterion %></li>
 					<% end %>

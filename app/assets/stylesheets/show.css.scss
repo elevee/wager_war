@@ -18,11 +18,16 @@
 
 $stubfont: pixelmixregular;
 
-h2, h6, p {
+.stub h2, h6, p {
 	font-family: $stubfont, sans-serif;
 	text-align: center;
+	text-transform: uppercase;
 }
 
 .barcode {
 	border: 1px solid black;
+}
+
+li {
+	text-align: center;
 }

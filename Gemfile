@@ -21,6 +21,10 @@ group :development do
 
 end
 
+group :development, :test do
+  gem 'rspec-rails', '~> 2.0'
+end
+
 group :production do
   gem 'pg'
   gem 'zurb-foundation', '~> 4.0.0'

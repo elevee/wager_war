@@ -7,5 +7,4 @@ class Wager < ActiveRecord::Base
 
   attr_accessible :title, :description, :terms, :terms_attributes
 
-
 end

@@ -45,15 +45,6 @@
 
 		</table>
 
-
-
-		<ul>
-			<% @open_wagers = Wager.where("host_id = '5'") %>
-			<%# || guest_id == current_user.id) %>
-			<% @open_wagers.each do |wager| %>
-			<li><%= wager.title %></li>
-			<% end %>
-		</ul>
 	</div>
 
 </div>

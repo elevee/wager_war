@@ -15,10 +15,39 @@
 	  <li><a href="#" class="button secondary">Settings</a></li>
 	</ul>
 
-	<div class="row large-offset-2 large-10">
+	<div class="row large-10">
 		<h2>Open Wagers</h2>
-		<ul>
+		
+		<table>
+		  <thead>
+		    <tr>
+		      <th width="200">Title</th>
+		      <th>With</th>
+		      <th width="150">Settled?</th>
+		      <th width="150">Table Header</th>
+		    </tr>
+		  </thead>
+		  <tbody>
 			
+			<% @open_wagers = Wager.where("host_id = '5'") %>
+		  	<% @open_wagers.each do |wager| %>
+
+		    <tr>
+		      <td><%= wager.title %></td>
+		      <td>John Doe</td>
+		      <td>Content Goes Here</td>
+		      <td>Content Goes Here</td>
+		    </tr>
+		    
+		    <% end %>
+
+		  </tbody>
+
+		</table>
+
+
+
+		<ul>
 			<% @open_wagers = Wager.where("host_id = '5'") %>
 			<%# || guest_id == current_user.id) %>
 			<% @open_wagers.each do |wager| %>

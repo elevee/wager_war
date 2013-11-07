@@ -52,7 +52,7 @@ WagerWar::Application.configure do
   # config.action_mailer.raise_delivery_errors = false
 
   # DEVISE - SET THIS TO DOMAIN NAME
-  # config.action_mailer.default_url_options = { :host => 'wagerwar.com' }
+  config.action_mailer.default_url_options = { :host => 'wagerwar.herokuapp.com/' }
 
   # Enable threaded mode
   # config.threadsafe!

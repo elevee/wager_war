@@ -17,6 +17,14 @@
 
 	<div class="row large-offset-2 large-10">
 		<h2>Open Wagers</h2>
+		<ul>
+			
+			<% @open_wagers = Wager.where("host_id = '5'") %>
+			<%# || guest_id == current_user.id) %>
+			<% @open_wagers.each do |wager| %>
+			<li><%= wager.title %></li>
+			<% end %>
+		</ul>
 	</div>
 
 </div>

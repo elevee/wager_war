@@ -33,7 +33,11 @@
 		  	<% @open_wagers.each do |wager| %>
 
 		    <tr>
-		      <td><%= wager.title %></td>
+		      <td>
+		      	<%= link_to( wager_path(wager) ) do %>
+  					<strong><%= wager.title %></strong>
+				<% end %>
+		      </td>
 		      <td>John Doe</td>
 		      <td>Content Goes Here</td>
 		      <td>Content Goes Here</td>

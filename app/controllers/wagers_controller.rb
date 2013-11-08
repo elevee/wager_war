@@ -57,6 +57,7 @@ class WagersController < ApplicationController
 
   def edit
     @wager = Wager.find(params[:id])
+    
   end 
 
   def update

@@ -1,7 +1,9 @@
-.pushButton {
-	background-color: yellow;
-	border-color: yellow;
+.button.pushButton {
+	background-color: white;
+	border-color: black;
+	color: black;
 }
-		// :hover {
-		// 	background-color: blue;
-		// }
+
+.button.pushButton:hover {
+	background-color: gray;
+}

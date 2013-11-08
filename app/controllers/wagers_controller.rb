@@ -55,8 +55,18 @@ class WagersController < ApplicationController
     end
   end
 
-  def update
+  def edit
+    @wager = Wager.find(params[:id])
   end 
+
+  def update
+    # @post = Post.find params[:id]
+    # if @post.update_attributes params[:post]
+    #   redirect_to posts_path
+    # else
+    #   render :action => :edit
+    # end
+  end
 
   def destroy
   end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131017054905) do
+ActiveRecord::Schema.define(:version => 20131108084511) do
 
   create_table "terms", :force => true do |t|
     t.datetime "created_at",      :null => false
@@ -58,6 +58,9 @@ ActiveRecord::Schema.define(:version => 20131017054905) do
     t.integer  "deadline"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.text     "host_terms"
+    t.text     "guest_terms"
+    t.string   "status"
   end
 
 end

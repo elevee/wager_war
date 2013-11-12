@@ -10,6 +10,7 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'figaro'
+gem "koala", "~> 1.8.0rc1"
 
 group :development do
 

@@ -1,4 +1,5 @@
-class User < ActiveRecord::Base
+class User < ActiveRecord::Base  
+
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -8,17 +9,19 @@ class User < ActiveRecord::Base
   devise :omniauthable, :omniauth_providers => [:facebook]
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :firstname, :lastname, :password, :password_confirmation, :remember_me, :provider, :uid, :name
+  attr_accessible :email, :firstname, :lastname, :password, :password_confirmation, :remember_me, :provider, :uid, :name, :image
   has_and_belongs_to_many :wagers
+
 
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     user = User.where(:provider => auth.provider, :uid => auth.uid).first
       unless user
-        user = User.create(name:auth.extra.raw_info.name,
-                             provider:auth.provider,
-                             uid:auth.uid,
-                             email:auth.info.email,
-                             password:Devise.friendly_token[0,20]
+        user = User.create(  name:     auth.extra.raw_info.name,
+                             provider: auth.provider,
+                             uid:      auth.uid,
+                             email:    auth.info.email,
+                             password: Devise.friendly_token[0,20],
+                             image:    auth.info.image
                              )
       end
     user
@@ -38,6 +41,11 @@ class User < ActiveRecord::Base
   end
 
   # @user = User.find_for_facebook_oauth(request.env["omniauth.auth"], current_user)
+
+
+  # def facebook
+  #   @facebook ||= Koala::Facebook::API.new(outh_token)
+  # end
 
 
 end

@@ -29,7 +29,10 @@
       <div class="login">
         <% if current_user.present? %>
           <% if current_user.name.present? %>
-            <span>Logged in as <strong><%= current_user.name %></strong></span>
+            <span>
+              <%= image_tag("#{ current_user.image }", size: "32x32")  %>
+              <strong><%= current_user.name %></strong>
+            </span>
             <% end %>
             <br />
             <%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %>
